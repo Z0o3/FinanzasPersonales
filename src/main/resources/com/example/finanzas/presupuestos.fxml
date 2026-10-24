@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.finanzas.controller.PresupuestosController">
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn text="Categoría" fx:id="colCategoria" prefWidth="160"/>
+                <TableColumn text="Límite mensual" fx:id="colLimite" prefWidth="130"/>
+                <TableColumn text="Gastado (mes actual)" fx:id="colGastado" prefWidth="150"/>
+                <TableColumn text="Disponible" fx:id="colDisponible" prefWidth="120"/>
+                <TableColumn text="Avance" fx:id="colAvance" prefWidth="220"/>
+            </columns>
+        </TableView>
+    </center>
+    <left>
+        <VBox spacing="8" alignment="TOP_CENTER" prefWidth="230">
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <Label fx:id="lblForm" text="Nuevo presupuesto" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="cmbCategoria" promptText="Categoría de gasto" prefWidth="210"/>
+            <TextField fx:id="txtLimite" promptText="Límite mensual ($)"/>
+            <TextField fx:id="txtUmbral" promptText="Avisar al llegar a (%)" text="80"/>
+            <HBox spacing="8" alignment="CENTER">
+                <Button fx:id="btnSave" text="Guardar" onAction="#onSave" style="-fx-min-width: 90px;"/>
+                <Button text="Nuevo" onAction="#onNew" style="-fx-min-width: 90px;"/>
+            </HBox>
+            <Button fx:id="btnDelete" text="Eliminar seleccionado" onAction="#onDelete" style="-fx-min-width: 190px;"/>
+        </VBox>
+    </left>
+</BorderPane>

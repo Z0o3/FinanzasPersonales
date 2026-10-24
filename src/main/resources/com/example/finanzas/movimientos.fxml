@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.finanzas.controller.MovimientosController">
+    <top>
+        <fx:include source="components/filtro.fxml" fx:id="filtro"/>
+    </top>
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn text="Fecha" fx:id="colFecha" prefWidth="95"/>
+                <TableColumn text="Tipo" fx:id="colTipo" prefWidth="80"/>
+                <TableColumn text="Monto" fx:id="colMonto" prefWidth="110"/>
+                <TableColumn text="Concepto" fx:id="colConcepto" prefWidth="190"/>
+                <TableColumn text="Categoría" fx:id="colCategoria" prefWidth="115"/>
+                <TableColumn text="Cuenta" fx:id="colCuenta" prefWidth="120"/>
+                <TableColumn text="Estado" fx:id="colEstado" prefWidth="90"/>
+                <TableColumn text="Método" fx:id="colMetodo" prefWidth="120"/>
+                <TableColumn text="Etiquetas" fx:id="colEtiquetas" prefWidth="140"/>
+            </columns>
+        </TableView>
+    </center>
+    <left>
+        <VBox spacing="8" alignment="TOP_CENTER" prefWidth="230">
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <Label fx:id="lblForm" text="Nuevo movimiento" style="-fx-font-weight: bold;"/>
+            <DatePicker fx:id="dpFecha" prefWidth="210"/>
+            <ComboBox fx:id="cmbTipo" prefWidth="210"/>
+            <TextField fx:id="txtMonto" promptText="Monto"/>
+            <TextField fx:id="txtConcepto" promptText="Concepto / descripción"/>
+            <ComboBox fx:id="cmbCategoria" promptText="Categoría" prefWidth="210"/>
+            <ComboBox fx:id="cmbCuenta" promptText="Cuenta origen/destino" prefWidth="210"/>
+            <ComboBox fx:id="cmbEstado" promptText="Estado" prefWidth="210"/>
+            <ComboBox fx:id="cmbMetodo" promptText="Método de pago" prefWidth="210"/>
+            <TextField fx:id="txtEtiquetas" promptText="#vacaciones #becas #impuestos"/>
+            <HBox spacing="8" alignment="CENTER">
+                <Button fx:id="btnSave" text="Guardar" onAction="#onSave" style="-fx-min-width: 90px;"/>
+                <Button text="Nuevo" onAction="#onNew" style="-fx-min-width: 90px;"/>
+            </HBox>
+            <Button fx:id="btnDelete" text="Eliminar seleccionado" onAction="#onDelete" style="-fx-min-width: 190px;"/>
+            <Button text="Recargar" onAction="#onReload" style="-fx-min-width: 190px;"/>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT">
+            <padding>
+                <Insets topRightBottomLeft="8"/>
+            </padding>
+            <Label fx:id="lblTotals"/>
+        </HBox>
+    </bottom>
+</BorderPane>

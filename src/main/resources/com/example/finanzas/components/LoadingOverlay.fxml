@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:id="overlay"
+           style="-fx-background-color: rgba(0, 0, 0, 0.4);"
+           visible="false" mouseTransparent="true">
+    <VBox alignment="CENTER" spacing="10">
+        <ProgressIndicator fx:id="spinner" />
+        <Label text="Loading..." style="-fx-text-fill: white; -fx-font-size: 14px;" />
+    </VBox>
+</StackPane>
+

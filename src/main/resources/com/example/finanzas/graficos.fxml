@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml" spacing="8" fx:controller="com.example.finanzas.controller.GraficosController">
+    <padding>
+        <Insets topRightBottomLeft="10"/>
+    </padding>
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Año:"/>
+        <ComboBox fx:id="cmbAnio"/>
+        <Label text="Mes (distribución de gastos):"/>
+        <ComboBox fx:id="cmbMes"/>
+    </HBox>
+    <HBox spacing="10" VBox.vgrow="ALWAYS">
+        <PieChart fx:id="pieChart" HBox.hgrow="ALWAYS"/>
+        <LineChart fx:id="lineChart" HBox.hgrow="ALWAYS" title="Tendencia de ingresos vs. gastos">
+            <xAxis>
+                <CategoryAxis/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Monto ($)"/>
+            </yAxis>
+        </LineChart>
+    </HBox>
+</VBox>

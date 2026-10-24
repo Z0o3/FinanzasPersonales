@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.finanzas.controller.MainController">
+    <BorderPane>
+        <top>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="8" right="12" bottom="8" left="12"/>
+                </padding>
+                <Label fx:id="lblUser" style="-fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Cerrar sesión" onAction="#onLogout"/>
+            </HBox>
+        </top>
+        <center>
+            <TabPane tabClosingPolicy="UNAVAILABLE">
+                <Tab text="Movimientos">
+                    <fx:include source="movimientos.fxml" fx:id="movimientos"/>
+                </Tab>
+                <Tab text="Presupuestos">
+                    <fx:include source="presupuestos.fxml" fx:id="presupuestos"/>
+                </Tab>
+                <Tab text="Categorías">
+                    <fx:include source="categorias.fxml" fx:id="categorias"/>
+                </Tab>
+                <Tab text="Gráficos">
+                    <fx:include source="graficos.fxml" fx:id="graficos"/>
+                </Tab>
+                <Tab text="Reportes">
+                    <fx:include source="reportes.fxml" fx:id="reportes"/>
+                </Tab>
+            </TabPane>
+        </center>
+    </BorderPane>
+    <fx:include source="components/LoadingOverlay.fxml" fx:id="loadingOverlay"/>
+</StackPane>
